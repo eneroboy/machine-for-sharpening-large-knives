@@ -4,8 +4,9 @@ The design was created as a device for sharpening industrial knives of a maximum
 What is it made of:
 - stepper motor NEMA17 (trolley movement forwards backwards)
 - wiper motor (trolley movement left right)
+- washing machine motor (rotation of the stone disc that sharpens)
 
 https://user-images.githubusercontent.com/32792538/174741868-d24a2335-7201-4b58-ab13-108455fae49b.mp4
 
-Longer video of working machine
+Longer video of working machine:
 https://www.youtube.com/shorts/5SEdsnL14F8
