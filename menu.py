@@ -136,11 +136,11 @@ try:
             elif i == 0:
                 numberOfMoved = 0
                 moveRightLeft("lewo",numberOfMoved,True,False)
-                krokowy.setPositionZero(1000,0)
+                stepper.setPositionZero(1000,0)
                 display.lcd_clear()
                 data = open("liczbakrokowdonoza.txt", "r").read().split()
                 manySteps = data[0]
-                krokowy.moveStepperMotor(int(manySteps), CCW,True) 
+                stepper.moveStepperMotor(int(manySteps), CCW,True) 
                 moveRightLeft("prawo", -1, False,False)
                 display.lcd_clear()
                 display.lcd_display_string("Wlacz silnik",1)
@@ -150,7 +150,7 @@ try:
                     if GPIO.input(OK):
                         display.lcd_clear()
                         break
-                krokowy.moveStepperMotor(int(manySteps), CW,True)
+                stepper.moveStepperMotor(int(manySteps), CW,True)
                 moveRightLeft("lewo",0, False,False)
 
         if val == 1:
@@ -208,7 +208,7 @@ try:
                     data = open("liczbakrokowdonoza.txt", "r")
                     howMuchStepsDo = int(data.read().split()[0])
                     data.close()
-                    krokowy.moveStepperMotor(howMuchStepsDo, 0, False)
+                    stepper.moveStepperMotor(howMuchStepsDo, 0, False)
                     sleep(0.5)
                     print ("to teraz: ",howMuchStepsDo)
                     #moveRightLeft("prawo",-1,False,False)
@@ -255,7 +255,7 @@ try:
                 if (numberOfMoved + 1) % 2 == 0:
                     display.lcd_clear()
                     display.lcd_display_string(" Przesuwanie... ",1)
-                    krokowy.moveStepperMotor(steps, CW, True)
+                    stepper.moveStepperMotor(steps, CW, True)
                     sleep(1)
                     data = open("liczbakrokowdonoza.txt", "r")
                     howMuchStepsDo = int(data.read().split()[0])
@@ -272,7 +272,7 @@ try:
                 howMuchStepsDo = int(data.read().split()[0])
                 data.close()
                 sleep(0.5)
-                krokowy.moveStepperMotor(howMuchStepsDo, CCW,True)
+                stepper.moveStepperMotor(howMuchStepsDo, CCW,True)
                 print "koniec"
                 main()
         else:
